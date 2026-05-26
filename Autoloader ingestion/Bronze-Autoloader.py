@@ -2,7 +2,7 @@
 import pyspark.sql.functions as F
 
 # Set up a parameter.
-dbutils.widgets.text("table_name", "bookings")
+dbutils.widgets.text("table_name", "bookings") 
 
 # Grab the specific dataset name passed by the orchestrator
 dataset = dbutils.widgets.get("table_name")
