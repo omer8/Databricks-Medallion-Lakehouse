@@ -1,16 +1,20 @@
 # Enterprise Aviation Data Lakehouse ✈️
 
-![Databricks](https://img.shields.io/badge/Databricks-FF3621?style=for-the-badge&logo=Databricks&logoColor=white)
-![Apache Spark](https://img.shields.io/badge/Apache%20Spark-E25A1C?style=for-the-badge&logo=Apache%20Spark&logoColor=white)
-![Delta Lake](https://img.shields.io/badge/Delta%20Lake-00AEEF?style=for-the-badge&logo=Databricks&logoColor=white)
+![Databricks](https://img.shields.io/badge/Databricks-FF3621?style=for-the-badge&logo=databricks&logoColor=white)
+![Apache Spark](https://img.shields.io/badge/Apache%20Spark-E25A1C?style=for-the-badge&logo=apachespark&logoColor=white)
+![Delta Lake](https://img.shields.io/badge/Delta%20Lake-003366?style=for-the-badge&logo=delta&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![SQL](https://img.shields.io/badge/SQL-4479A1?style=for-the-badge&logo=postgresql&logoColor=white)
+![AWS](https://img.shields.io/badge/AWS-232F3E?style=for-the-badge&logo=amazonwebservices&logoColor=white)
 
-An end-to-end, event-driven Medallion Data Architecture built on Databricks. This project ingests raw aviation data (flights, bookings, passengers, airports), processes it through a strict data quality pipeline using Delta Live Tables (DLT), and serves it to BI analysts via a perfectly modeled Gold Star Schema.
+
+An end-to-end, event-driven Medallion Data Architecture built on Databricks. This project ingests raw aviation data (flights, bookings, passengers, airports), processes it through a strict data quality pipeline using Databricks Lakeflow(Delta Live Tables), and serves it to BI analysts via a perfectly modeled Gold Star Schema.
 
 ---
 
 ## 🏗️ Architecture Pipeline
 
-![Medallion Pipeline Architecture](docs/Databricks-Lakehouse-Pipeline.jpg)
+![Medallion Pipeline Architecture](docs/Databricks-Lakehouse-Pipeline.jpeg)
 
 ---
 
@@ -64,6 +68,21 @@ Instead of relying on rigid, scheduled batch jobs, this architecture utilizes **
 * **Purpose:** Pre-aggregated, mathematically accurate analytics layer ready for Power BI/Tableau.
     * **Dimensions:** `dim_passengers`, `dim_airports`, `dim_flights`
     * **Fact:** `fact_bookings` (Filters for `__END_AT IS NULL` to prevent double-counting revenue from SCD2 history).
+    
+---
+
+## 🛠️ Tech Stack
+
+| Layer | Technology |
+|---|---|
+| Ingestion | Databricks Auto Loader (`cloudFiles`) |
+| Orchestration | Databricks Workflows + File Arrival Triggers |
+| Transformation | Lakeflow Spark Declarative Pipelines (DLT) |
+| CDC | `create_auto_cdc_flow` (SCD1 + SCD2) |
+| Storage | Delta Lake on cloud object storage |
+| Governance | Unity Catalog RBAC |
+| BI | Databricks SQL Dashboards |
+| Language | Python (PySpark), SQL |
 
 ---
 
