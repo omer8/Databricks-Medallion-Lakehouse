@@ -70,14 +70,17 @@ Instead of relying on rigid, scheduled batch jobs, this architecture utilizes **
 ## 📂 Repository Structure
 
 ```text
-├── pipeline_code/
+├── Lakeflow Transformation/
 │   ├── Lakeflow-Gold-Layer/                # Lakeflow pipeline code for the Gold Star Schema
 │   │   └── my_transformation.py
-│   ├── Lakeflow-Silver-Layer/              # Lakeflow pipeline code for Silver CDC transformations
-│   │   └── my_transformation.py
+│   └── Lakeflow-Silver-Layer/              # Lakeflow pipeline code for Silver CDC transformations
+│       └── my_transformation.py
+├── Ingestion/
 │   ├── Bronze-Autoloader.py                # Worker notebook for Auto Loader ingestion
-│   ├── Bronze-Orchestrator.py              # Orchestrates the parallel ingestion
-│   ├── Setup.py                            # Environment and configuration setup script
+│   └── Bronze-Orchestrator.py              # Orchestrates the parallel ingestion
+├── Project Setup/
+│   └── Setup.py                            # Environment and configuration setup script
+├── Governance/
 │   └── Unity-Catalog-Data-Governance.py    # RBAC and security lock-down scripts
 ├── docs/
 │   └── pipeline_architecture.jpg           # Visual DAG of the Databricks Workflow
