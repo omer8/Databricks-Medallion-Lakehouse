@@ -10,7 +10,7 @@ An end-to-end, event-driven Medallion Data Architecture built on Databricks. Thi
 
 ## 🏗️ Architecture Pipeline
 
-![Medallion Pipeline Architecture](docs/Databricks-Lakehouse-Pipeline.jpg)
+![Medallion Pipeline Architecture](docs/Databricks-Lakehouse-Pipeline.jpeg)
 
 ---
 
