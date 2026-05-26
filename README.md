@@ -4,7 +4,7 @@
 ![Apache Spark](https://img.shields.io/badge/Apache%20Spark-E25A1C?style=for-the-badge&logo=Apache%20Spark&logoColor=white)
 ![Delta Lake](https://img.shields.io/badge/Delta%20Lake-00AEEF?style=for-the-badge&logo=Databricks&logoColor=white)
 
-An end-to-end, event-driven Medallion Data Architecture built on Databricks. This project ingests raw aviation data (flights, bookings, passengers, airports), processes it through a strict data quality pipeline using Delta Live Tables (DLT), and serves it to BI analysts via a perfectly modeled Gold Star Schema.
+An end-to-end, event-driven Medallion Data Architecture built on Databricks. This project ingests raw aviation data (flights, bookings, passengers, airports), processes it through a strict data quality pipeline using Databricks Lakeflow(Delta Live Tables), and serves it to BI analysts via a perfectly modeled Gold Star Schema.
 
 ---
 
