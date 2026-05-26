@@ -68,6 +68,21 @@ Instead of relying on rigid, scheduled batch jobs, this architecture utilizes **
 * **Purpose:** Pre-aggregated, mathematically accurate analytics layer ready for Power BI/Tableau.
     * **Dimensions:** `dim_passengers`, `dim_airports`, `dim_flights`
     * **Fact:** `fact_bookings` (Filters for `__END_AT IS NULL` to prevent double-counting revenue from SCD2 history).
+    
+---
+
+## 🛠️ Tech Stack
+
+| Layer | Technology |
+|---|---|
+| Ingestion | Databricks Auto Loader (`cloudFiles`) |
+| Orchestration | Databricks Workflows + File Arrival Triggers |
+| Transformation | Lakeflow Spark Declarative Pipelines (DLT) |
+| CDC | `create_auto_cdc_flow` (SCD1 + SCD2) |
+| Storage | Delta Lake on cloud object storage |
+| Governance | Unity Catalog RBAC |
+| BI | Databricks SQL Dashboards |
+| Language | Python (PySpark), SQL |
 
 ---
 
